@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux'; 
-import { removeFromCart, increaseQty, decreaseQty, } from '../redux/cartSlice'; 
+import { removeFromCart, increaseQty, decreaseQty, } from '../redux/Cartslice'; 
 export default function CartItem({ item }) { 
     const dispatch = useDispatch(); 
     return (
