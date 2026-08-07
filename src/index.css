@@ -349,7 +349,10 @@ button{
   font-size:16px;
 }
 
-.cart-table th:nth-child(1), .cart-table td:nth-child(1){ width:25%; }
+.cart-table th:nth-child(1), 
+.cart-table td:nth-child(1){ 
+    width:25%; 
+}
 .cart-table th:nth-child(2),
 .cart-table td:nth-child(2){
   width:15%;
