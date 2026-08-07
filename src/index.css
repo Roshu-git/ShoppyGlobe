@@ -303,6 +303,10 @@ button{
     transition: background .2s;
 }
 /* cart-table css start */
+.table-wrapper{ width:100%; 
+    overflow-x:auto;
+    overflow-y: hidden; 
+    -webkit-overflow-scrolling:touch; } 
 .cart-table{
   width:100%;
   border-collapse:collapse;
@@ -311,6 +315,8 @@ button{
   border-radius:12px;
   overflow:hidden;
   box-shadow:0 4px 12px rgba(0,0,0,0.08);
+  min-width: 700px;
+  width: 100%;
 }
 
 .cart-table th,
@@ -318,6 +324,7 @@ button{
   padding:14px 16px;
   border-bottom:1px solid #eee;
   text-align:left;
+  white-space: nowrap;
 }
 
 .cart-table th{
@@ -483,5 +490,21 @@ button{
   }
 }
 /* checkout-page css end */
-/*  css end */
+/*  Responsive css end */
+@media (max-width:575px) {
+    .product-grid {
+        grid-template-columns: 1fr;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+   .card {
+        max-width: 380px;
+    }
+} 
+@media (max-width:425px) {
+   .card {
+        max-width: 300px;
+    }
+}
 /*  css end */

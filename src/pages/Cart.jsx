@@ -20,6 +20,7 @@ export default function Cart() {
       ))} */}
   {/* Summary Table */} 
   <h3 style={{ marginTop: '30px' }}>Order Summary:</h3> 
+  <div className="table-wrapper">
   <table className="cart-table"> 
     <thead> 
       <tr> 
@@ -33,11 +34,6 @@ export default function Cart() {
     </thead> 
     <tbody> 
       {items.map(item => ( 
-        // <tr key={item.id}> 
-        // <td title={item.title}>{item.title}</td> 
-        // <td>{item.quantity}</td> 
-        // <td>₹{(item.price * item.quantity).toFixed(2)}</td> 
-        // </tr>
         <CartItem key={item.id} item={item} /> 
       ))} 
       </tbody> 
@@ -46,10 +42,10 @@ export default function Cart() {
           <td colSpan="5">
             <strong>Grand Total</strong></td> 
             <td><strong>₹{total.toFixed(2)}</strong></td> 
-            {/* <td><strong>₹{grandTotal.toFixed(2)}</strong></td>  */}
         </tr> 
       </tfoot> 
       </table>
+      </div>
 
       <div className="checkout-btn-wrap">
         <Link to="/checkout" >

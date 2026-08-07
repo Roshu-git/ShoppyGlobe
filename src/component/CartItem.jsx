@@ -26,22 +26,6 @@ export default function CartItem({ item }) {
             <td>₹{(item.price * item.quantity).toFixed(2)}</td>
             <td> <button onClick={() => dispatch(removeFromCart(item.id))} style={{ background: 'red', color: 'white' }} > Remove </button></td>
         </tr>
-        {/* <h4>{item.title}</h4> 
-        <p>₹{item.price}</p> 
-        <button onClick={() => dispatch(decreaseQty(item.id))}>
-            <Minus size={16} />
-        </button> 
-        <span> {item.quantity} </span> 
-        <button onClick={() => dispatch(increaseQty(item.id))}>
-            <Plus size={16} />
-        </button> 
-        <br /> 
-        <button onClick={() => dispatch(removeFromCart(item.id))}> 
-            <Trash2 size={16} />
-            Remove 
-        </button>  */}
-        {/* </div> 
-        </div> */}
-        </>
+    </>
     );
 }
