@@ -1,3 +1,4 @@
+// Checkout page with user form and order summary
 import { useSelector, useDispatch } from 'react-redux';
 import { clearCart } from '../redux/cartSlice';
 import { useNavigate } from 'react-router-dom';
@@ -7,10 +8,13 @@ export default function Checkout() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  // Calculate final order total
   const grandTotal = items.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
+
+  // Place order, clear cart and redirect to home page
 
   const placeOrder = () => {
     alert('Order placed');

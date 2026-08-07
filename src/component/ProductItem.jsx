@@ -1,3 +1,4 @@
+// Single product card component
 import { ShoppingCart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -6,6 +7,7 @@ import { addToCart } from '../redux/cartSlice';
 export default function ProductItem({ product }) {
   const dispatch = useDispatch();
 
+  // Navigate to product details page
   return (
     <div className="card">
       <Link to={`/product/${product.id}`} className="product-link">
@@ -18,7 +20,7 @@ export default function ProductItem({ product }) {
       </Link>
 
       <p>₹{product.price}</p>
-
+{/* // Add selected product to cart */}
       <button onClick={() => dispatch(addToCart(product))}>
         <ShoppingCart size={18} />
         Add to Cart
