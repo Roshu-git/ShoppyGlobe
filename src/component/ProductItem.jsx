@@ -1,3 +1,4 @@
+import { ShoppingCart } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../redux/cartSlice';
@@ -19,6 +20,7 @@ export default function ProductItem({ product }) {
       <p>₹{product.price}</p>
 
       <button onClick={() => dispatch(addToCart(product))}>
+        <ShoppingCart size={18} />
         Add to Cart
       </button>
     </div>
