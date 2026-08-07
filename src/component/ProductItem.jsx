@@ -14,7 +14,7 @@ export default function ProductItem({ product }) {
           alt={product.title}
           loading="lazy"
         />
-        <h3>{product.title}</h3>
+        <h3 className="product-title" title={product.title}>{product.title}</h3>
       </Link>
 
       <p>₹{product.price}</p>

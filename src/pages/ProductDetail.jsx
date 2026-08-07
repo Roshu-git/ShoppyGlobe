@@ -1,3 +1,4 @@
+import { ArrowLeft } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
@@ -26,7 +27,7 @@ export default function ProductDetail() {
     <div className="detail">
       <img src={product.thumbnail} alt={product.title} />
       <div>
-        <h2>{product.title}</h2>
+        <h2 className="product-title" title={product.title}>{product.title}</h2>
         <p>{product.description}</p>
         <h3>₹{product.price}</h3>
 

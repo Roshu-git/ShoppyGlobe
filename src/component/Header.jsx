@@ -12,9 +12,10 @@ export default function Header() {
 
   return (
     <header className="header">
-      <Link to="/">ShoppyGlobe</Link>
+      <Link to="/" className='logo'>ShoppyGlobe</Link>
 
-    <div className="search-box"> <Search size={18} />
+    <div className="ShoppyGlobe-search"> 
+        <Search size={18} color='black'/>
       <input
         placeholder="Search products..."
         onChange={(e) => dispatch(setSearchTerm(e.target.value))}

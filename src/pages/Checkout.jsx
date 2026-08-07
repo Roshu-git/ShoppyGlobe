@@ -19,9 +19,9 @@ export default function Checkout() {
     <div>
       <h2>Checkout</h2>
 
-      <input placeholder="Full Name" />
-      <input placeholder="Email" />
-      <input placeholder="Address" />
+      <input placeholder="Full Name" className='form-control' />
+      <input placeholder="Email" className='form-control' />
+      <input placeholder="Address" className='form-control' />
 
       <h3>Order Summary</h3>
 
@@ -31,7 +31,7 @@ export default function Checkout() {
         </p>
       ))}
 
-      <button onClick={placeOrder}>Place Order</button>
+      <button onClick={placeOrder} className='check-button'>Place Order</button>
     </div>
   );
 }
