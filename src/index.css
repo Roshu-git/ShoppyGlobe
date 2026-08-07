@@ -101,12 +101,22 @@ button{
 }
 .ShoppyGlobe-search {
     position: relative;
+    width: 100%;
+    max-width: 560px;
+
 }
 .ShoppyGlobe-search svg{
     position: absolute;
     content: '';
-    left: 5px;
-    top: 20px;
+    left: 10px;
+    top: 19px;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(240px, 240px));
+  gap:24px;
+  justify-content:start;
 }
 
 @media(max-width:768px){
@@ -121,6 +131,7 @@ button{
 
 /* card css start */
 .card{
+    max-width: 240px;
   background:#fff;
   border-radius:16px;
   padding:16px;
@@ -190,7 +201,7 @@ button{
 .header input{
   flex:1;
   max-width:420px;
-  padding:12px 16px 12px 30px;
+  padding:12px 16px 12px 33px;
   border-radius:999px;
   border:none;
   outline:none;
@@ -472,3 +483,5 @@ button{
   }
 }
 /* checkout-page css end */
+/*  css end */
+/*  css end */
