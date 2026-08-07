@@ -1,9 +1,23 @@
-import React from 'react'
+import { useSelector } from 'react-redux';
+import useProducts from '../hooks/useProducts';
+import ProductItem from './ProductItem';
 
-function ProductList() {
+export default function ProductList() {
+  const { products, loading, error } = useProducts();
+  const search = useSelector(state => state.cart.searchTerm);
+
+  const filtered = products.filter(p =>
+    p.title.toLowerCase().includes(search.toLowerCase())
+  );
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+
   return (
-    <div>ProductList</div>
-  )
+    <div className="grid">
+      {filtered.map(product => (
+        <ProductItem key={product.id} product={product} />
+      ))}
+    </div>
+  );
 }
-
-export default ProductList
