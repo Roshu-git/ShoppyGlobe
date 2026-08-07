@@ -1,3 +1,5 @@
+// Get cart items from Redux
+
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CartItem from '../component/CartItem';
@@ -5,6 +7,7 @@ import CartItem from '../component/CartItem';
 export default function Cart() {
   const items = useSelector(state => state.cart.items);
 
+  // Calculate grand total
   const total = items.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
@@ -12,6 +15,7 @@ export default function Cart() {
 
   if (!items.length) return <p>Cart is empty</p>;
 
+  // Render cart items in table format
   return (
     <div className="sg-addcart">
       <h3 className='product-title'>Shopping Cart</h3>
@@ -46,7 +50,7 @@ export default function Cart() {
       </tfoot> 
       </table>
       </div>
-
+{/* // Navigate to checkout page */}
       <div className="checkout-btn-wrap">
         <Link to="/checkout" >
           <button>Proceed to Checkout</button>

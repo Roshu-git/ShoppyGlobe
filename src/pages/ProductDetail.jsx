@@ -1,3 +1,4 @@
+// Fetch product details based on route parameter
 import { ArrowLeft } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -10,6 +11,8 @@ export default function ProductDetail() {
   const [error, setError] = useState('');
   const dispatch = useDispatch();
 
+  // Show loading state
+  // Show product information and add to cart button
   useEffect(() => {
     fetch(`https://dummyjson.com/products/${id}`)
       .then(res => {
