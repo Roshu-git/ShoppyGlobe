@@ -1,4 +1,5 @@
 // Get cart items from Redux
+// Passing each cart item as a prop to CartItem component
 
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';

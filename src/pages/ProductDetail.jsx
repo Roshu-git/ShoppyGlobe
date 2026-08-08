@@ -13,22 +13,43 @@ export default function ProductDetail() {
 
   // Show loading state
   // Show product information and add to cart button
-  useEffect(() => {
-    fetch(`https://dummyjson.com/products/${id}`)
-      .then(res => {
-        if (!res.ok) throw new Error('Product not found');
-        return res.json();
-      })
-      .then(setProduct)
-      .catch(err => setError(err.message));
-  }, [id]);
+  // useEffect(() => {
+  //   fetch(`https://dummyjson.com/products/${id}`)
+  //     .then(res => {
+  //       if (!res.ok) throw new Error('Product not found');
+  //       return res.json();
+  //     })
+  //     .then(setProduct)
+  //     .catch(err => setError(err.message));
+  // }, [id]);
 
-  if (error) return <p>{error}</p>;
+  useEffect(() => { const fetchProduct = async () => { 
+    try { 
+    setLoading(true); 
+    const response = await fetch( `https://dummyjson.com/products/${id}` ); 
+    if (!response.ok) { 
+      throw new Error('Product not found'); 
+    } 
+    const data = await response.json(); 
+    setProduct(data); 
+  } 
+  catch (err) { 
+    setError(err.message); 
+  } finally { 
+    setLoading(false); 
+  } 
+}; 
+fetchProduct(); 
+}, [id]);
+
+  if (loading) return <p>Loading product...</p>;
+  if (error) return (
+  <div className="error-box"> <h3>Product not found</h3> <p>{error}</p> </div> );
   if (!product) return <p>Loading...</p>;
 
   return (
     <div className="detail">
-      <img src={product.thumbnail} alt={product.title} />
+      <img src={product.thumbnail} alt={product.title} loading="lazy" />
       <div>
         <h2 className="product-title" title={product.title}>{product.title}</h2>
         <p>{product.description}</p>

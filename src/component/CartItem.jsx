@@ -3,6 +3,8 @@
 import { Plus, Minus, Trash2 } from 'lucide-react';
 import { useDispatch } from 'react-redux'; 
 import { removeFromCart, increaseQty, decreaseQty, } from '../redux/Cartslice'; 
+import PropTypes from 'prop-types';
+
 export default function CartItem({ item }) { 
     const dispatch = useDispatch(); 
     return (
@@ -31,3 +33,11 @@ export default function CartItem({ item }) {
     </>
     );
 }
+
+CartItem.propTypes = { 
+    item: PropTypes.shape({ 
+        id: PropTypes.number.isRequired, 
+        title: PropTypes.string.isRequired, 
+        quantity: PropTypes.number.isRequired, 
+        price: PropTypes.number.isRequired, 
+    }).isRequired, };

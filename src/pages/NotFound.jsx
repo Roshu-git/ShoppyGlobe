@@ -1,3 +1,5 @@
+// 404 page for unknown routes
+
 import { useRouteError, Link } from 'react-router-dom';
 import Header from '../component/Header';
 
@@ -10,7 +12,8 @@ export default function NotFound() {
     <div className="not-found">
       <h2>404</h2>
       <h3>Page not found</h3>
-      <p>{error?.statusText || error?.message}</p>
+      <p>The page you are looking for does not exist. {error?.statusText || error?.message}</p>
+      {/* <p>{error?.statusText || error?.message}</p> */}
       <Link to="/" className='back-btn'>Go Home</Link>
     </div>
     </>

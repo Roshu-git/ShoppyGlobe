@@ -1,4 +1,6 @@
 # ShoppyGlobe
+## Project Overview
+ShoppyGlobe is a responsive e-commerce application built with React, Redux Toolkit, and React Router. It supports product listing, search, product details, cart management, checkout flow, lazy loading, and responsive UI.
 
 React + Redux e-commerce app.
 
